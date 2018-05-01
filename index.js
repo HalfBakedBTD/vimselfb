@@ -59,6 +59,10 @@ client.on('message', async message => {
     const msg = await message.channel.send('Loading...')
     msg.edit(`${message.guild.owner} owns the server.`);
   }
+	if(message.content.startsWith('.ride')) {
+    message.delete();
+		message.channel.send("🍆💦 Someone please ride my cock!!")
+  }
 })
  
 client.login(process.env.BOT_TOKEN);
