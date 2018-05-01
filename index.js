@@ -3,7 +3,6 @@ const Discord = require('discord.js')
 const fs = require("fs");
 const client = new discord.Client();
 let chat = require("./chats.json");
-let spamSends = 0;
 
 client.on('ready', () => {
 	console.log('CONNECTED TO ' + client.user.username)
