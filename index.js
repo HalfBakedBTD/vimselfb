@@ -5,47 +5,14 @@ const client = new discord.Client();
 let chat = require("./chats.json");
 let spamSends = 0;
 
-function rep(client) {
-   let adchannel = client.channels.find(`id`, "409866730597384203");
-	 let countries = [".dFrance", ".dGermany", ".dSiberia", ".dRepublic of Congo", ".dEgypt", ".dBrazil", ".dMexico", ".dMadagascar", ".dJapan", ".dChina", ".dPeru", ".dSouth Africa", ".dMozambique", ".dRussia", ".dZootopia", ".dNeverland", ".dIsle of Men"];
-   let pick = Math.floor((Math.random() * countries.length));
-   let spam = adchannel.send(`${countries[pick]}`);
- setTimeout(() => rep(client), 30*1000);
-}
-
 client.on('ready', () => {
 	console.log('CONNECTED TO ' + client.user.username)
-	rep(client)
-});
-
-client.on('guildCreate', guild => {
-  client.channels.filter(c => c.id === '440364762505805845').forEach(channel => {
-    let botAvatar = client.user.displayAvatarURL;
-    let eventEmbed = new Discord.RichEmbed()
-    .setColor('#27ae60')
-    .setThumbnail(botAvatar)
-    .setDescription(`**Event:** added to a guild.\n**User Guilds Size:** ${client.guilds.size}\n**Guild:** ${guild.name}\n**Owner**: ${guild.owner}\n**Owner ID:** ${guild.ownerID}\n**Members:** ${guild.memberCount}\n**Region:** ${guild.region}\n**Verification Level:** ${guild.verificationLevel}`);
-  
-   channel.send(eventEmbed);
-  });
-});
-
-client.on('guildDelete', guild => {
-  client.channels.filter(c => c.id === '440364762505805845').forEach(channel => {
-    let botAvatar = client.user.displayAvatarURL;
-    let eventEmbed = new Discord.RichEmbed()
-    .setColor('#e74c3c')
-    .setThumbnail(botAvatar)
-    .setDescription(`**Event:** removed from a guild.\n**User Guilds Size:** ${client.guilds.size}\n**Guild:** ${guild.name}\n**Owner**: ${guild.owner}\n**Owner ID:** ${guild.ownerID}\n**Members:** ${guild.memberCount}\n**Region:** ${guild.region}\n**Verification Level:** ${guild.verificationLevel}`);
-  
-   channel.send(eventEmbed);
-  });
 });
 
 client.on('message', async message => {
 	let messageArray = message.content.split(" ");
 	let args = messageArray.slice(1);
-	if(message.author.id !== '284137818895417344') return;
+	if(message.author.id !== '410778708320976918') return;
 	console.log(`${message.author.username} said ${message.content} in #${message.channel.name}.`)
 	if(message.content === 'ping') {
     message.delete();
