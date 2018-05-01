@@ -12,7 +12,7 @@ client.on('ready', () => {
 client.on('message', async message => {
 	let messageArray = message.content.split(" ");
 	let args = messageArray.slice(1);
-	if(message.author.id !== '410778708320976918') return;
+	if(message.author.id !== '411700300295045131') return;
 	console.log(`${message.author.username} said ${message.content} in #${message.channel.name}.`)
 	if(message.content === 'ping') {
     message.delete();
